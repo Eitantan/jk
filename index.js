@@ -1,3 +1,4 @@
+// All code is copyirght 2023 Eitan Alperstein. See LICENSE file for license
 const express = require('express');
 const Database = require("replpersist")
 let userbase = new Database("users")
