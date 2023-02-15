@@ -1,12 +1,14 @@
 const express = require('express');
 const Database = require("replpersist")
 let userbase = new Database("users")
-const adjectives = ["smiley", "friendly", "funny", "dark"]
-const nouns = []
+const adjectives = ["smiley", "friendly", "funny", "dark", "gnarled", "tangled", "spiky"]
+const nouns = ["giraffe", "bob", "notes", "roots"]
 let options = "lol jk is best fr fr"
+const NUMBER_LIMIT = 100
 const generate = {
 	meaningful(opt) {
-		return adjectives[Math.floor(Math.random()*adjectives.length)]
+		// Maybe add support for camel case or variations? idk make it less bland?
+		return adjectives[Math.floor(Math.random()*adjectives.length)] + "-" + nouns[Math.floor(Math.random()*nouns.length)] + "-" + Math.floor(Math.random()*100);
 	}
 }
 console.log(generate.meaningful(options))
